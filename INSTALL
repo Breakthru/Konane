@@ -1,0 +1,8 @@
+E' necessario avere le librerie di svilppo gtk (e pkg-config)
+per compilare il programma.per compilarlo basta scrivere:
+cd linux-bin
+./make
+
+e per giocare:
+./konane
+

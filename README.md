@@ -1,0 +1,2 @@
+# Konane
+GTK+ board game

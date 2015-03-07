@@ -17,7 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-
+#include <iostream>
+#include <cstdlib>
 
 template <class elemento> class lista {
 struct NodoLista 
@@ -43,7 +44,7 @@ void initEnum()   // inizializza una enumerazione degli elementi della lista
 	{if (testa!=NULL) corrente=testa; 
 	else {cout << "niente enumerazione di una lista vuota\n";exit(1);}
 	}
-// l'enumerazione è fatta grazie alla variabile NodoLista *corrente
+// l'enumerazione  fatta grazie alla variabile NodoLista *corrente
 
 elemento estrai()  // estrae un'elemento dall'enumerazione
 { 

@@ -179,8 +179,8 @@ void nuova_partita(GtkWidget *wid,gpointer data)
 int i,j;
 gioco->numeromosse=0;
 
-for (j=1 ; j <= numero_celle_verticali ; j++) {
-for (i=1 ; i <= numero_celle_orizzontali ; i++){
+for (j=1 ; j <= NUMERO_CELLE_VERTICALI ; j++) {
+for (i=1 ; i <= NUMERO_CELLE_ORIZZONTALI ; i++){
 
 if (((i+j) % 2)==0) {
 // questa cella appartiene al giocatore
@@ -206,8 +206,8 @@ gioco->impSuggerimenti("");
 //funzione costruttore dell'oggetto interfaccia grafica
 interfaccia_grafica::interfaccia_grafica(konane *pgioco)
 {
-//int numero_celle_orizzontali=7;
-//int numero_celle_verticali=7;
+//int NUMERO_CELLE_ORIZZONTALI=8;
+//int NUMERO_CELLE_VERTICALI=8;
 GtkWidget *finestra, *bottone, *pixmapwid;
 GtkWidget *mybox;
 GtkWidget *myvbox;
@@ -258,10 +258,10 @@ gtk_label_set_line_wrap(GTK_LABEL(status),TRUE);
     gtk_widget_show(finestra);
 
 myvbox = gtk_vbox_new (false, 0);
-for (j=1 ; j <= numero_celle_verticali ; j++) {
+for (j=1 ; j <= NUMERO_CELLE_VERTICALI ; j++) {
 
 mybox = gtk_hbox_new (false, 0);
-for (i=1 ; i <= numero_celle_orizzontali ; i++){
+for (i=1 ; i <= NUMERO_CELLE_ORIZZONTALI ; i++){
 
 bottone=gtk_button_new();
 scacchiera[i][j].x=i;

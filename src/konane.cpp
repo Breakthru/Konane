@@ -27,7 +27,7 @@ bool appartiene(cella &a,player chimuove);
 void assegnapedina(cella &pedina,player a);
 bool mossa_valida(tipo_statodelgioco &stato,const tipo_mossa &mossa,player chimuove);
 
-void mostraCalcoli(const char *testo,gioco<tipo_statodelgioco,tipo_mossa> *punt)
+void mostraCalcoli(const char *testo, gioco<tipo_statodelgioco, tipo_mossa> *punt)
 {
 ((konane *) punt)->impIa(testo);
 }
@@ -40,8 +40,8 @@ cout << "mossa da (" << mossa.i << "," <<mossa.j <<") a (" <<mossa.i1<<","<<moss
 void stampa_scacchiera(tipo_statodelgioco stato)
 {
 int i,j;
-for(j=1;j<=numero_celle_verticali;j++) {
-for (i=1;i<=numero_celle_orizzontali;i++) {
+for(j=1; j <= NUMERO_CELLE_VERTICALI ;j++) {
+for (i=1; i <= NUMERO_CELLE_ORIZZONTALI ;i++) {
 if (stato.casella[i][j].occupata == false ) cout <<"-"; 
 else if (stato.casella[i][j].appartiene == giocatore) cout << "G";
 else cout <<"C"; 
@@ -56,14 +56,14 @@ void mossaInizialeComputer(tipo_statodelgioco stato,int &x,int &y)
 
 do
 {
-x=1+(int)rand()%(numero_celle_orizzontali);
-y=1+(int)rand()%(numero_celle_verticali);
+x=1+(int)rand()%( NUMERO_CELLE_ORIZZONTALI );
+y=1+(int)rand()%( NUMERO_CELLE_VERTICALI );
 //cout << x << y << endl;
 }
 while(! ( appartiene(stato.casella[x][y],computer) && (
-	(x<numero_celle_orizzontali && stato.casella[x+1][y].occupata == false) ||
+    (x<NUMERO_CELLE_ORIZZONTALI && stato.casella[x+1][y].occupata == false) ||
 	(x>1 && stato.casella[x-1][y].occupata == false) ||
-	(y<numero_celle_verticali && stato.casella[x][y+1].occupata == false) ||
+    (y<NUMERO_CELLE_VERTICALI && stato.casella[x][y+1].occupata == false) ||
 	(y>1 && stato.casella[x][y-1].occupata == false) ) 
 	) );
 
@@ -204,10 +204,10 @@ if ( (i==i1) && (j==j1) ) return(true);
 //fine ricorsione
 
 player avversario=inverso(chimuove);
-if ( (i <1 || i >numero_celle_orizzontali) ||
-(j <1 || j >numero_celle_verticali) ||
-(i1 <1 || i1 >numero_celle_orizzontali) ||
-(j1 <1 || j1 >numero_celle_verticali) ) return(false);
+if ( (i <1 || i > NUMERO_CELLE_ORIZZONTALI ) ||
+(j <1 || j > NUMERO_CELLE_VERTICALI ) ||
+(i1 <1 || i1 > NUMERO_CELLE_ORIZZONTALI ) ||
+(j1 <1 || j1 > NUMERO_CELLE_VERTICALI ) ) return(false);
 
 if (stato.casella[i1][j1].occupata) return(false);
 
@@ -231,7 +231,7 @@ void mossePossibili(tipo_statodelgioco &stato,int x,int y,lista<tipo_mossa> &lis
 {
 int i=x,j=y;
 tipo_mossa temp;
-for (i=1;i<=numero_celle_orizzontali;i++)
+for (i=1;i<=NUMERO_CELLE_ORIZZONTALI;i++)
 {//possibili mosse orizzontali
 if (appartiene(stato.casella[i][j],chimuove) ) {
 temp.i=i;
@@ -243,7 +243,7 @@ if (mossa_valida(stato,temp,chimuove)) {lista.inserisci(temp);
 }
 }}
 i=x;j=y;
-for (j=1;j<=numero_celle_verticali;j++)
+for (j=1;j<=NUMERO_CELLE_VERTICALI;j++)
 {//possibili mosse verticali
 if (appartiene(stato.casella[i][j],chimuove) ) {
 temp.i=i;
@@ -267,8 +267,8 @@ lista<tipo_mossa> konane::listamosse(tipo_statodelgioco stato, tipo_nodo tipo)
 {
 int i,j;
 lista<tipo_mossa> ret;
-for (j=1;j<=numero_celle_verticali;j++) {
-for (i=1;i<=numero_celle_orizzontali;i++) {
+for (j=1;j<=NUMERO_CELLE_VERTICALI;j++) {
+for (i=1;i<=NUMERO_CELLE_ORIZZONTALI;i++) {
 if (stato.casella[i][j].occupata==false) mossePossibili(stato,i,j,ret,giocatore_nodo(tipo)); 
 //aggiungi alla lista le possibili mosse che terminano nella cella ij
 }}
@@ -342,8 +342,8 @@ int i,j;
 numeromosse=0;
 setliv(LIVELLO_DEFAULT);
 stato.pedina_selezionata=false;
-for (j=1 ; j <= numero_celle_verticali ; j++) {
-for (i=1 ; i <= numero_celle_orizzontali ; i++){
+for (j=1 ; j <= NUMERO_CELLE_VERTICALI ; j++) {
+for (i=1 ; i <= NUMERO_CELLE_ORIZZONTALI ; i++){
 
 if (((i+j) % 2)==0) {
 // questa cella appartiene al giocatore

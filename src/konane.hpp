@@ -18,6 +18,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+#define NUMERO_CELLE_ORIZZONTALI 8
+#define NUMERO_CELLE_VERTICALI 8
+#define LIVELLO_DEFAULT 3
+#define DEBUG 0
 
 #include <iostream>
 #include <gtk/gtk.h>

@@ -49,7 +49,7 @@ player appartiene; // a quale giocatore appartiene la pedina
 
 struct tipo_statodelgioco  // struttura dati per uno stato del gioco konane
 {
-cella casella[numero_celle_orizzontali+1][numero_celle_verticali+1]; 
+cella casella[ NUMERO_CELLE_ORIZZONTALI + 1][ NUMERO_CELLE_VERTICALI + 1];
 bool pedina_selezionata; // true se c'è una pedina selezionata
 cella sele; // quale pedina è selezionata
 };
@@ -62,7 +62,7 @@ int i,j,i1,j1; //una mossa e' muovere una pedina da una cella (i,j) ad una (i1,j
 
 class interfaccia_grafica  // dati e metodi per la grafica
 {
-pulsante scacchiera[numero_celle_orizzontali+1][numero_celle_verticali+1];
+pulsante scacchiera[ NUMERO_CELLE_ORIZZONTALI + 1][ NUMERO_CELLE_VERTICALI + 1];
 GtkWidget *suggerimenti;
 GtkWidget *ia;
 GtkWidget *status;

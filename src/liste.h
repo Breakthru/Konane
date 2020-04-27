@@ -42,7 +42,7 @@ void inserisci(elemento e) //metodo per inserire un elemento
 
 void initEnum()   // inizializza una enumerazione degli elementi della lista
 	{if (testa!=NULL) corrente=testa; 
-	else {cout << "niente enumerazione di una lista vuota\n";exit(1);}
+        else {std::cout << "niente enumerazione di una lista vuota\n";exit(1);}
 	}
 // l'enumerazione  fatta grazie alla variabile NodoLista *corrente
 
@@ -60,7 +60,7 @@ int numero() {return n;}
 
 void stampa()   // mostra la lista a video
 {NodoLista *temp=testa;
-while (temp!=NULL) {cout << temp->info << " "; temp=temp->next;}
-cout << "\n";}
+while (temp!=NULL) {std::cout << temp->info << " "; temp=temp->next;}
+std::cout << "\n";}
 
 };

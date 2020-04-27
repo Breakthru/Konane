@@ -38,13 +38,13 @@ inline int minimo(int a,int b) { return a<b?a:b;}
 public:
 // funzioni virtuali, devono essere ridefinite a seconda dell'oggetto che si vuole costruire
 
-virtual int valuta(tipo_statodelgioco stato) {cout <<"errore: valuta non e' stato definito\n";}
+virtual int valuta(tipo_statodelgioco stato) {std::cout <<"errore: valuta non e' stato definito\n";}
 // esegue la funzione di valutazione di uno stato
 
-virtual lista<tipo_mossa> listamosse(tipo_statodelgioco stato, tipo_nodo tipo) {cout <<"errore: listamosse non e' stato definito\n";}
+virtual lista<tipo_mossa> listamosse(tipo_statodelgioco stato, tipo_nodo tipo) {std::cout <<"errore: listamosse non e' stato definito\n";}
 // restituisce la lista delle mosse possibili su uno stato per un giocatore (min o max)
 
-virtual tipo_statodelgioco eseguimossa(tipo_statodelgioco stato,tipo_mossa mossa) {cout <<"errore: eseguimossa non e' stato definito\n";}
+virtual tipo_statodelgioco eseguimossa(tipo_statodelgioco stato,tipo_mossa mossa) {std::cout <<"errore: eseguimossa non e' stato definito\n";}
 // esegue la mossa specificata sullo stato del gioco per restituire un nuovo stato del gioco
 
 int n_valutati; // numero di nodi valutati
@@ -66,7 +66,7 @@ if (livello >= livello_massimo) return(valuta(stato));
 //se non e' stato raggiunto il livello massimo espandi il nodo
 lista<tipo_mossa> possibili_mosse;
 possibili_mosse = listamosse(stato,tipo);
-//cout << "ci sono " << possibili_mosse.numero() << " mosse da qui per " << tipo << endl;
+//std::cout << "ci sono " << possibili_mosse.numero() << " mosse da qui per " << tipo << endl;
 tipo_statodelgioco figlio;
 n_esplorati++;
 int v;
@@ -92,7 +92,7 @@ v=alfabeta(figlio,livello+1,alpha,beta,min_);
 
 template <class tipo_statodelgioco, class tipo_mossa>tipo_mossa gioco<tipo_statodelgioco,tipo_mossa>::decidiMossa(tipo_statodelgioco gioco)
 {
-ostringstream testo;
+std::ostringstream testo;
 tipo_mossa mossaMigliore,mossa;
 tipo_statodelgioco figlio;
 lista<tipo_mossa> listaMosse;

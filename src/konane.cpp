@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 #include "konane.h"
 
-
+using namespace std;
 
 bool appartiene(cella &a,player chimuove);
 void assegnapedina(cella &pedina,player a);

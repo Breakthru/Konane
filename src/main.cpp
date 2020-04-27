@@ -26,9 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 using namespace std;
 #include <iostream>
 #include <sstream>
-//#include "gioco.h"
-#include "konane.cpp"
-#include "interfaccia.cpp"
+#include "konane.hpp"
 
 int main (int argc,char *argv[])
 {

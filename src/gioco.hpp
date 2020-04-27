@@ -18,7 +18,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include "liste.h"
+#include "liste.hpp"
+#include <sstream>
+
 #define INFINITO 32000
 
 enum player {nessuno,giocatore,computer};
@@ -90,7 +92,7 @@ v=alfabeta(figlio,livello+1,alpha,beta,min_);
 
 }
 
-template <class tipo_statodelgioco, class tipo_mossa>tipo_mossa gioco<tipo_statodelgioco,tipo_mossa>::decidiMossa(tipo_statodelgioco gioco)
+template <class tipo_statodelgioco, class tipo_mossa> tipo_mossa gioco<tipo_statodelgioco,tipo_mossa>::decidiMossa(tipo_statodelgioco gioco)
 {
 std::ostringstream testo;
 tipo_mossa mossaMigliore,mossa;

@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 #include <iostream>
 #include <gtk/gtk.h>
-#include "gioco.h"
+#include "gioco.hpp"
 using namespace std;
 
 class konane; // dichiarazione

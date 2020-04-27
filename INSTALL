@@ -1,8 +1,2 @@
-E' necessario avere le librerie di svilppo gtk (e pkg-config)
-per compilare il programma.per compilarlo basta scrivere:
-cd linux-bin
-./make
-
-e per giocare:
-./konane
-
+Run the ./compile.sh script to build the game,
+gtk+-2.0 is required.

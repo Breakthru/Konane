@@ -97,3 +97,10 @@ tipo_statodelgioco eseguimossa(tipo_statodelgioco stato,tipo_mossa mossa);
 void aggiornaSuggerimenti(); // mostra le mosse del giocatore
 };
 
+// debugging functions
+void printmossa(tipo_mossa mossa);
+void coordinateMossa(tipo_mossa mossa,int &mangia_x,int &mangia_y,int &presa_x,int &presa_y);
+void stampa_scacchiera(tipo_statodelgioco stato);
+void assegnapedina(cella &pedina,player a);
+void mossaInizialeComputer(tipo_statodelgioco stato,int &x,int &y);
+bool mossa_valida(tipo_statodelgioco &stato,const tipo_mossa &mossa,player chimuove);

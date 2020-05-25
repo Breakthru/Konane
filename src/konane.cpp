@@ -24,8 +24,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 using namespace std;
 
 bool appartiene(cella &a,player chimuove);
-void assegnapedina(cella &pedina,player a);
-bool mossa_valida(tipo_statodelgioco &stato,const tipo_mossa &mossa,player chimuove);
 
 void mostraCalcoli(const char *testo, gioco<tipo_statodelgioco, tipo_mossa> *punt)
 {

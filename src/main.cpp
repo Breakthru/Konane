@@ -1,5 +1,5 @@
 /*
-Konane 
+Konane
 Copyright (C) 2005 Marco Paladini
 breakthru@inwind.it
 
@@ -18,20 +18,17 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-
 using namespace std;
+#include "konane.hpp"
 #include <iostream>
 #include <sstream>
-#include "konane.hpp"
 
-int main (int argc,char *argv[])
-{
-  gtk_init (&argc, &argv);
+int main(int argc, char *argv[]) {
+  gtk_init(&argc, &argv);
 
-konane play;
+  konane play;
 
-cout << "tutto inizializzato\n" << endl;
+  cout << "tutto inizializzato\n" << endl;
 
-
-gtk_main ();
+  gtk_main();
 }
